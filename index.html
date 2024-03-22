@@ -6,9 +6,10 @@
 	<title>Peninsula Group</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container my-3">
 		<div class="row my-5">
 			<div class="col-12">
 				<h4 class="text-center afforH">Affordable plans for your business</h4>
@@ -23,13 +24,83 @@
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="card affordCard">
 				  <div class="card-header affordHead">
-				    <p class="hrText fw-semibold">HR Support</p>
-				    <hr style="width: 90%; text-align: center;">
+				    <p class="hrText">HR Support</p>
+				    <hr style="width: 100%; text-align: center; color: #7d97c2;">
+				    <span class="affordSp">As little as</span>
+				    <div class="d-flex align-items-center justify-content-between">
+				    	<strong class="inline pl-2 text-xl md:text-2xl text-blue-400 font-centra-book">-</strong>
+				    	<a class="btn btn-lg btn-primary priceBtn" onclick="togglePriceDiv()">See Prices</a>
+				    </div>
+				    <span class="affordSp">Per employee, per month</span>
+
 				  </div>
 				  <div class="card-body">
-				    <h5 class="card-title">Special title treatment</h5>
-				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <h5 class="card-title affordTi">Included in this package:</h5>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Employee contracts, handbooks and documents</p>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Unlimited calls to 24-hour HR advice line</p>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Weekly e-learning webinars</p>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Online HR management software</p>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Litigation representation</p>
+				    <p class="card-text affordP"><i class="bi bi-check-lg checkIcon"></i> Peninsula Protect</p>
+				    <hr style="width: 100%; text-align: center; color: #7d97c2; margin-top: 150px;">
+				    <div class="d-flex align-items-center justify-content-between">
+				    	<div class="mt-2">
+					    	<p class="affordSp">As little as <strong class="inline pl-2 text-xl md:text-2xl text-blue-400 font-centra-book">-</strong></p>
+					    	<p class="affordSp" style="margin-top: -6px !important;">Per employee, per month</p>
+				    	</div>
+				    	<a class="btn btn-lg btn-primary priceBtn"  onclick="togglePriceDiv()">See Prices</a>
+
+				    	<!-- right side pricing div -->
+				    	<div id="priceDiv">
+  							<button class="closeBtn" onclick="togglePriceDiv()">Close <i class="bi bi-x-lg closeIcon"></i></button>
+  							<div class="rightHead">
+  								<h6 class="rightH4">HR and Health & Safety <br> support</h6>
+  								<p class="rightP">Provide us with a few details and we’ll give you an estimated price.</p>
+  							</div>
+  							<div class="rightBody">
+  								<form>
+								  <div class="mb-5">
+								    <label for="Last name" class="form-label">First name</label>
+								    <input type="text" class="form-control" id="Last name">
+								  </div>
+								  <div class="mb-5">
+								    <label for="Last name" class="form-label">Last name</label>
+								    <input type="text" class="form-control" id="Last Name">
+								  </div>
+								  <div class="mb-5">
+								    <label for="company" class="form-label">Company - optional</label>
+								    <input type="text" class="form-control" id="company">
+								  </div>
+								  <div class="mb-5">
+								    <label for="Job title" class="form-label">Job title - optional</label>
+								    <input type="text" class="form-control" id="Job title">
+								  </div>
+								  <div class="mb-5">
+								    <label for="employees" class="form-label">Number of employees</label>
+								    <input type="number" class="form-control" id="employees">
+								  </div>
+								  <div class="mb-5">
+								    <label for="email" class="form-label">Email address</label>
+								    <input type="email" class="form-control" id="email">
+								  </div>
+								  <div class="mb-5">
+								    <label for="number" class="form-label">Phone number</label>
+								    <input type="number" class="form-control" id="number">
+								  </div>
+								  <div class="mb-5">
+								    <label for="Postcode" class="form-label">Postcode</label>
+								    <input type="number" class="form-control w-50" id="Postcode">
+								  </div>
+								  <div class="mb-5">
+								  	<h5>View our <a href="#" class="privacyLink" style="color: rgb(57 84 224) !important">Privacy Notice</a></h5>
+								  </div>
+								  <button type="submit" class="btn btn-lg quoteBtn">Get my Quote</button>
+								</form>
+  							</div>
+
+						</div>
+
+				    </div>
 				  </div>
 				</div>
 			</div>
@@ -37,4 +108,20 @@
 	</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+	function togglePriceDiv() {
+	  var priceDiv = document.getElementById("priceDiv");
+	  if (priceDiv.style.display === "block") {
+	    priceDiv.style.opacity = "0"; // Fade out effect
+	    setTimeout(function() {
+	      priceDiv.style.display = "none";
+	    }, 500); // Wait for the animation to complete (500ms)
+	  } else {
+	    priceDiv.style.display = "block";
+	    setTimeout(function() {
+	      priceDiv.style.opacity = "1"; // Fade in effect
+	    }, 100); // Wait for a brief moment before starting the animation (100ms)
+	  }
+	}
+</script>
 </html>
